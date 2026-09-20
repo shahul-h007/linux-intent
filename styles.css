@@ -25,7 +25,7 @@ button,a{font:inherit}
 .view{display:none}
 .view.is-active{display:block}
 .page{max-width:1220px;margin:auto;padding-bottom:28px}
-.hero{position:relative;overflow:hidden;border-radius:16px;min-height:340px;padding:32px 0;background-image:linear-gradient(90deg,#07100ff7 0%,#07100fe8 36%,#07100f99 48%,transparent 78%),url("ChatGPT Image Sep 20, 2026, 12_24_45 AM.png");background-position:left top,right center;background-size:100% 100%,auto 100%;background-repeat:no-repeat}
+.hero{position:relative;overflow:hidden;border-radius:16px;min-height:340px;padding:32px 0;background-image:linear-gradient(90deg,#07100ff7 0%,#07100fe8 36%,#07100f99 48%,transparent 78%),url("ChatGPT Image Sep 20, 2026, 12_24_45 AM.png");background-position:left top,center center;background-size:100% 100%,cover;background-repeat:no-repeat}
 .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:64px;pointer-events:none;background:linear-gradient(to top,var(--bg) 0%,transparent 100%)}
 .hero>*{position:relative;z-index:1}
 .eyebrow{margin:0 0 10px;color:var(--green);font:600 13px var(--mono)}
