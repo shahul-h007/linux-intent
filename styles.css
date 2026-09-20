@@ -172,8 +172,7 @@ input{
 
   cursor:pointer;
 
-  transition:
-    .18s ease;
+  transition:.18s ease;
 }
 
 .primary-nav button:hover,
@@ -286,7 +285,7 @@ input{
    ============================================================ */
 
 .topbar{
-  height:78px;
+  height:62px;
 
   display:flex;
 
@@ -354,7 +353,7 @@ input{
 
   margin:auto;
 
-  padding-bottom:28px;
+  padding-bottom:24px;
 }
 
 
@@ -369,9 +368,16 @@ input{
 
   border-radius:16px;
 
-  min-height:400px;
+  /*
+    Reduced from 400px.
+    This removes the unnecessary empty vertical area.
+  */
+  min-height:335px;
 
-  padding:42px 0 38px;
+  /*
+    Reduced top/bottom spacing.
+  */
+  padding:30px 0 26px;
 
   /*
     KEEPING YOUR ORIGINAL IMAGE PATH EXACTLY
@@ -411,7 +417,7 @@ input{
 
   box-shadow:
     inset 0 1px rgba(255,255,255,.025),
-    inset 0 -90px 110px rgba(0,0,0,.25),
+    inset 0 -70px 90px rgba(0,0,0,.25),
     0 20px 60px rgba(0,0,0,.12);
 }
 
@@ -453,7 +459,10 @@ input{
   right:0;
   bottom:0;
 
-  height:90px;
+  /*
+    Reduced because the hero itself is now shorter.
+  */
+  height:65px;
 
   pointer-events:none;
 
@@ -461,7 +470,7 @@ input{
     linear-gradient(
       to top,
       var(--bg) 0%,
-      rgba(7,16,15,.72) 25%,
+      rgba(7,16,15,.62) 25%,
       transparent 100%
     );
 }
@@ -477,7 +486,7 @@ input{
 }
 
 .eyebrow{
-  margin:0 0 10px;
+  margin:0 0 8px;
 
   color:var(--green);
 
@@ -493,7 +502,7 @@ input{
 .hero h1{
   max-width:760px;
 
-  margin:0 0 9px;
+  margin:0 0 7px;
 
   font:
     700 42px/1.12 var(--sans);
@@ -537,7 +546,10 @@ input{
 
   max-width:760px;
 
-  margin-top:25px;
+  /*
+    Moved the search bar upward.
+  */
+  margin-top:18px;
 }
 
 .search-box{
@@ -653,7 +665,10 @@ input{
 .try-row{
   align-items:center;
 
-  margin:13px 0 30px;
+  /*
+    Reduced spacing below the search.
+  */
+  margin:10px 0 18px;
 
   font:14px var(--mono);
 }
@@ -694,7 +709,11 @@ input{
    ============================================================ */
 
 .section-head{
-  margin:13px 0;
+  /*
+    Reduced the gap between hero/search area
+    and Search Results.
+  */
+  margin:8px 0 11px;
 }
 
 .section-head h2{
@@ -709,7 +728,7 @@ input{
    ============================================================ */
 
 .result-card{
-  margin:12px 0;
+  margin:10px 0;
 
   padding:20px;
 
@@ -1222,8 +1241,14 @@ body.light .main-command{
     padding:0 26px;
   }
 
+  .topbar{
+    height:58px;
+  }
+
   .hero{
-    min-height:390px;
+    min-height:330px;
+
+    padding:28px 0 25px;
 
     background-position:
       center,
@@ -1234,6 +1259,14 @@ body.light .main-command{
     max-width:650px;
 
     font-size:38px;
+  }
+
+  .search-row{
+    margin-top:17px;
+  }
+
+  .try-row{
+    margin-bottom:16px;
   }
 
   .category-grid{
@@ -1274,7 +1307,7 @@ body.light .main-command{
   }
 
   .topbar{
-    height:70px;
+    height:64px;
   }
 
   .menu-button{
@@ -1283,9 +1316,9 @@ body.light .main-command{
 
   .hero{
 
-    min-height:360px;
+    min-height:340px;
 
-    padding:30px 0 35px;
+    padding:28px 0 30px;
 
     /*
       SAME ORIGINAL IMAGE
@@ -1332,6 +1365,15 @@ body.light .main-command{
     max-width:580px;
   }
 
+  .search-row{
+    margin-top:17px;
+  }
+
+  .try-row{
+    margin-top:9px;
+    margin-bottom:17px;
+  }
+
   .category-grid,
   .about-grid{
     grid-template-columns:1fr;
@@ -1355,11 +1397,15 @@ body.light .main-command{
     padding:0 13px;
   }
 
+  .topbar{
+    height:60px;
+  }
+
   .hero{
 
-    min-height:390px;
+    min-height:370px;
 
-    padding:27px 0 30px;
+    padding:25px 0 28px;
 
     border-radius:12px;
 
@@ -1387,6 +1433,10 @@ body.light .main-command{
     align-items:stretch;
   }
 
+  .search-row{
+    margin-top:15px;
+  }
+
   .search-box{
     width:100%;
   }
@@ -1404,7 +1454,8 @@ body.light .main-command{
   .try-row{
     align-items:flex-start;
 
-    margin-bottom:24px;
+    margin-top:9px;
+    margin-bottom:20px;
   }
 
   .pill{
@@ -1447,7 +1498,7 @@ body.light .main-command{
   }
 
   .hero{
-    min-height:410px;
+    min-height:390px;
   }
 
   .hero h1{
