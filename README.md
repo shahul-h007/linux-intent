@@ -37,7 +37,7 @@
 No build step, no install. Clone it and open the file:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/linux-intent.git
+git clone https://github.com/shahul-h007/linux-intent.git
 cd linux-intent
 ```
 
