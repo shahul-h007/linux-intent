@@ -742,4 +742,17 @@ document.addEventListener("DOMContentLoaded", () => {
     localStorage.setItem("linuxIntentTheme", document.body.classList.contains("light") ? "light" : "dark");
   });
   menu?.addEventListener("click", () => sidebar?.classList.toggle("open"));
+
+  // Close the mobile sidebar after picking a section, or when tapping outside it.
+  sidebar?.addEventListener("click", event => {
+    if (event.target.closest(".nav-item") || event.target.closest(".brand")) {
+      sidebar.classList.remove("open");
+    }
+  });
+
+  document.addEventListener("click", event => {
+    if (!sidebar?.classList.contains("open")) return;
+    if (sidebar.contains(event.target) || event.target.closest("#menuButton")) return;
+    sidebar.classList.remove("open");
+  });
 });
