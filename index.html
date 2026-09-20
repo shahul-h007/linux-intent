@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Linux Intent — Command Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="app-layout">
+        <aside class="sidebar" id="sidebar"><a class="brand" href="#" data-view="search"><span
+                    class="logo">&gt;_</span><span><b>Linux Intent</b><small>→ Command Finder</small></span></a>
+            <nav class="primary-nav" aria-label="Primary navigation"><button class="nav-item is-active"
+                    data-view="search">⌕ <span>Search</span></button><button class="nav-item" data-view="categories">▦
+                    <span>Categories</span></button><button class="nav-item" data-view="cheatsheet">▤ <span>Cheat
+                        Sheet</span></button><button class="nav-item" data-view="practice">☑
+                    <span>Practice</span></button><button class="nav-item" data-view="favorites">☆ <span>Favorites <i
+                            id="favCount"></i></span></button><button class="nav-item" data-view="about">ⓘ
+                    <span>About</span></button></nav>
+            <div class="nav-divider"></div>
+            <p class="nav-label">Common tasks</p>
+            <nav class="task-nav"><button class="nav-item" data-view="categories">▱ <span>Browse
+                        categories</span></button></nav>
+            <div class="terminal-quote">“Small commands.<br>Big control.”<br><code>root@linux:~$ <i></i></code></div>
+        </aside>
+        <main class="main-content">
+            <header class="topbar"><button class="menu-button" id="menuButton" aria-label="Toggle menu">☰</button>
+                
+            </header>
+            <section class="view is-active page" data-view="search">
+                <header class="hero">
+                    <p class="eyebrow">Natural language → Linux commands</p>
+                    <h1>Describe what you want to do in <span class="accent">Linux.</span></h1>
+                    <p>Get the right command, examples, and related commands instantly.</p>
+                    <div class="server-art" aria-hidden="true"></div>
+                </header>
+                <div class="search-row">
+                    <div class="search-box">⌕<input id="search"
+                            placeholder='Try: "delete a folder", "check running processes", "find a file"...'
+                            autocomplete="off"></div><button class="primary">Search →</button>
+                </div>
+                <div class="try-row">Try: <div class="suggestions pills"><button class="pill"
+                            data-query="find large files">find large files</button><button class="pill"
+                            data-query="check disk space">check disk space</button><button class="pill"
+                            data-query="install package">install package</button><button class="pill"
+                            data-query="change permission">change permission</button><button class="pill"
+                            data-query="kill a process">kill a process</button></div>
+                </div>
+                <div class="section-head">
+                    <div>
+                        <h2>Search Results</h2>
+                        <div id="resultMeta" class="meta"></div>
+                    </div>
+                </div>
+                <section id="results" class="results" aria-live="polite"></section>
+            </section>
+            <section class="view page" data-view="categories">
+                <header class="hero">
+                    <p class="eyebrow">Explore → Learn → Master</p>
+                    <h1>Linux Command <span class="accent">Categories</span></h1>
+                    <p>Browse commands by category. Find the right tool for the job.</p>
+                    <div class="server-art" aria-hidden="true"></div>
+                </header>
+                <div class="category-grid" id="categoryGrid"></div>
+                <div id="categoryDetail" class="category-detail"></div>
+            </section>
+            <section class="view page" data-view="cheatsheet">
+                <header class="hero">
+                    <p class="eyebrow">Linux Cheat Sheet</p>
+                    <h1>Linux Command <span class="accent">Cheat Sheet</span></h1>
+                    <p>Quick reference for the commands you actually use.</p>
+                </header>
+                <section id="cheatsheetList" class="table-wrap"></section>
+            </section>
+            <section class="view page" data-view="practice">
+                <header class="hero">
+                    <p class="eyebrow">Practice → Learn → Improve</p>
+                    <h1>Linux Command <span class="accent">Practice</span></h1>
+                    <p>Practice safely: answers are checked locally and never executed.</p>
+                </header>
+                <section id="practiceArea"></section>
+            </section>
+            <section class="view page" data-view="favorites">
+                <header class="hero">
+                    <p class="eyebrow">Your tools. Your flow.</p>
+                    <h1>Favorite <span class="accent">Commands</span></h1>
+                    <p>Your most-used Linux commands, ready when you need them.</p>
+                </header>
+                <section id="favoritesList"></section>
+            </section>
+            <section class="view page" data-view="about">
+                <header class="hero">
+                    <p class="eyebrow">About</p>
+                    <h1>Linux <span class="accent">Intent</span></h1>
+                    <p>Understand Linux commands in plain English.</p>
+                </header>
+                <p class="about-copy">Linux Intent is a static, browser-only command reference. It matches your words to
+                    a local command catalogue — no AI, login, database, or backend required.</p>
+                <div class="terminal-callout">&gt; Same power. Less memorization. ▌</div>
+                <div class="about-grid">
+                    <article class="about-card">
+                        <h3>⌕ Natural Language Search</h3>
+                        <p>Find commands using plain-English tasks, flags, examples, and related commands.</p>
+                    </article>
+                    <article class="about-card">
+                        <h3>☆ Favorites</h3>
+                        <p>Save useful commands in this browser with localStorage.</p>
+                    </article>
+                    <article class="about-card">
+                        <h3>☑ Practice</h3>
+                        <p>Build confidence with locally checked command questions.</p>
+                    </article>
+                    <article class="about-card">
+                        <h3>Built With</h3>
+                        <div class="badges"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>IBM
+                                Plex</span><span>LocalStorage</span></div>
+                    </article>
+                </div>
+            </section>
+            <footer><span>⌁ &nbsp; Linux Intent v1.0 &nbsp;|&nbsp; Open Source &nbsp;|&nbsp; Made for Curious
+                    Minds</span><span>Linux is freedom.</span></footer>
+        </main>
+    </div>
+    <script src="app.js"></script>
+</body>
+
+</html>
