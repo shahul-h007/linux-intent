@@ -368,31 +368,47 @@ input{
 
   border-radius:16px;
 
-  /*
-    The hero is deliberately shorter.
-    The search area will overlap the bottom
-    instead of leaving a huge empty area.
-  */
   min-height:345px;
 
   padding:30px 0 30px;
+
+  /*
+    IMAGE OVERLAY
+
+    LEFT:
+    Strong dark background for the text.
+
+    MIDDLE:
+    Smoothly fades away.
+
+    RIGHT:
+    Almost completely transparent so
+    Tux, terminal blocks, plant and
+    filesystem books remain visible.
+  */
 
   background-image:
 
     linear-gradient(
       90deg,
 
-      rgba(7,16,15,.99) 0%,
+      rgba(7,16,15,.98) 0%,
 
-      rgba(7,16,15,.97) 20%,
+      rgba(7,16,15,.96) 15%,
 
-      rgba(7,16,15,.91) 36%,
+      rgba(7,16,15,.88) 28%,
 
-      rgba(7,16,15,.70) 50%,
+      rgba(7,16,15,.62) 40%,
 
-      rgba(7,16,15,.32) 72%,
+      rgba(7,16,15,.30) 52%,
 
-      rgba(7,16,15,.05) 100%
+      rgba(7,16,15,.10) 64%,
+
+      rgba(7,16,15,.015) 76%,
+
+      rgba(7,16,15,0) 86%,
+
+      rgba(7,16,15,0) 100%
     ),
 
     url("ChatGPT Image Sep 20, 2026, 12_24_45 AM.png");
@@ -411,7 +427,7 @@ input{
 
   box-shadow:
     inset 0 1px rgba(255,255,255,.025),
-    inset 0 -70px 90px rgba(0,0,0,.25),
+    inset 0 -70px 90px rgba(0,0,0,.20),
     0 20px 60px rgba(0,0,0,.12);
 }
 
@@ -429,11 +445,16 @@ input{
 
   pointer-events:none;
 
+  /*
+    Very subtle green atmosphere.
+    Kept weak so it doesn't darken Tux.
+  */
+
   background:
     radial-gradient(
       circle at 76% 38%,
-      rgba(34,229,166,.09),
-      transparent 28%
+      rgba(34,229,166,.045),
+      transparent 25%
     );
 
   mix-blend-mode:screen;
@@ -461,7 +482,7 @@ input{
     linear-gradient(
       to top,
       var(--bg) 0%,
-      rgba(7,16,15,.62) 25%,
+      rgba(7,16,15,.50) 25%,
       transparent 100%
     );
 }
@@ -530,15 +551,6 @@ input{
    SEARCH
    ============================================================ */
 
-/*
-   IMPORTANT FIX
-
-   The search bar is pulled upward over the
-   empty bottom part of the hero.
-
-   This is the main change you were asking for.
-*/
-
 .search-row{
   display:flex;
 
@@ -546,22 +558,12 @@ input{
 
   max-width:760px;
 
-  /*
-    Pull the entire search row upward.
-  */
   margin-top:-105px;
 
-  /*
-    Keep it visually above the hero fade.
-  */
   position:relative;
 
   z-index:5;
 
-  /*
-    Prevent the old vertical space from
-    being preserved underneath it.
-  */
   margin-bottom:0;
 }
 
@@ -678,9 +680,6 @@ input{
 .try-row{
   align-items:center;
 
-  /*
-    The Try row follows the moved search bar.
-  */
   margin:10px 0 18px;
 
   position:relative;
@@ -726,10 +725,6 @@ input{
    ============================================================ */
 
 .section-head{
-  /*
-    Search Results now comes immediately after
-    the Try row instead of retaining the hero gap.
-  */
   margin:8px 0 11px;
 
   position:relative;
@@ -1282,9 +1277,6 @@ body.light .main-command{
     font-size:38px;
   }
 
-  /*
-    Slightly smaller upward pull on tablets.
-  */
   .search-row{
     margin-top:-90px;
   }
@@ -1347,16 +1339,26 @@ body.light .main-command{
 
     background-image:
 
+      /*
+        Mobile gradient:
+        dark on the LEFT,
+        almost transparent on the RIGHT.
+      */
+
       linear-gradient(
-        180deg,
+        90deg,
 
-        rgba(7,16,15,.98) 0%,
+        rgba(7,16,15,.97) 0%,
 
-        rgba(7,16,15,.94) 38%,
+        rgba(7,16,15,.91) 22%,
 
-        rgba(7,16,15,.74) 68%,
+        rgba(7,16,15,.62) 42%,
 
-        rgba(7,16,15,.88) 100%
+        rgba(7,16,15,.22) 62%,
+
+        rgba(7,16,15,.03) 78%,
+
+        rgba(7,16,15,0) 100%
       ),
 
       url("ChatGPT Image Sep 20, 2026, 12_24_45 AM.png");
@@ -1386,9 +1388,6 @@ body.light .main-command{
     max-width:580px;
   }
 
-  /*
-    Smaller overlap on tablet/mobile.
-  */
   .search-row{
     margin-top:-75px;
   }
@@ -1433,6 +1432,26 @@ body.light .main-command{
 
     border-radius:12px;
 
+    background-image:
+
+      linear-gradient(
+        90deg,
+
+        rgba(7,16,15,.97) 0%,
+
+        rgba(7,16,15,.90) 24%,
+
+        rgba(7,16,15,.58) 45%,
+
+        rgba(7,16,15,.20) 65%,
+
+        rgba(7,16,15,.02) 82%,
+
+        rgba(7,16,15,0) 100%
+      ),
+
+      url("ChatGPT Image Sep 20, 2026, 12_24_45 AM.png");
+
     background-position:
       center,
       78% center;
@@ -1450,10 +1469,6 @@ body.light .main-command{
     line-height:1.5;
   }
 
-  /*
-    Mobile search is stacked,
-    so use a smaller upward movement.
-  */
   .search-row{
     flex-direction:column;
 
