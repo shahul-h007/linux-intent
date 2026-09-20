@@ -1,4 +1,4 @@
-﻿:root{--bg:#07100f;--panel:#0c1a18;--text:#edf7f3;--muted:#9bb3ad;--line:#25433d;--green:#22e5a6;--amber:#f4b740;--sans:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace}
+:root{--bg:#07100f;--panel:#0c1a18;--text:#edf7f3;--muted:#9bb3ad;--line:#25433d;--green:#22e5a6;--amber:#f4b740;--sans:"IBM Plex Sans",sans-serif;--mono:"IBM Plex Mono",monospace}
 *{box-sizing:border-box}
 body{margin:0;background:radial-gradient(circle at 80% 0,#12332c55,transparent 32%),var(--bg);color:var(--text);font-family:var(--sans)}
 button,a{font:inherit}
@@ -17,7 +17,10 @@ button,a{font:inherit}
 .terminal-quote i{display:inline-block;width:8px;height:15px;background:var(--green);animation:blink 1s step-end infinite}
 @keyframes blink{50%{opacity:0}
 }
-.main-content{width:calc(100% - 258px);max-width:1500px;margin:auto;padding:0 38px;background:linear-gradient(90deg,#07100ff7 0%,#07100fe8 38%,#07100f85 100%),url("ChatGPT Image Sep 20, 2026, 12_24_45 AM.png") center right/cover fixed}
+.main-content{position:relative;z-index:0;width:calc(100% - 258px);max-width:1500px;margin:auto;padding:0 38px;background-image:linear-gradient(90deg,#07100ff7 0%,#07100fe8 36%,#07100f99 48%,transparent 74%),url("ChatGPT Image Sep 20, 2026, 12_24_45 AM.png");background-position:left top,right center;background-size:100% 100%,auto 100%;background-repeat:no-repeat;background-attachment:scroll,fixed}
+.main-content::before,.main-content::after{content:"";position:absolute;left:0;right:0;height:160px;pointer-events:none;z-index:-1}
+.main-content::before{top:0;background:linear-gradient(to bottom,var(--bg) 0%,transparent 100%)}
+.main-content::after{bottom:0;background:linear-gradient(to top,var(--bg) 0%,transparent 100%)}
 .topbar{height:78px;display:flex;justify-content:flex-end;align-items:center}
 .top-actions{display:flex;gap:12px}
 .icon-button,.github-link,.menu-button{border:1px solid var(--line);background:#0a1918;color:var(--text);border-radius:9px;padding:10px 14px;text-decoration:none;cursor:pointer}
