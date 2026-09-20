@@ -8,7 +8,7 @@
 
 > No backend. No database. No AI calls. No login. Just a hardcoded list of commands matched against what you type, running entirely in your browser.
 
-**Live demo:** [add your GitHub Pages link here once it's live]
+**Live demo:** https://shahul-h007.github.io/linux-intent/
 
 ---
 
