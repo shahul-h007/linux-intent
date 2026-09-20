@@ -369,19 +369,13 @@ input{
   border-radius:16px;
 
   /*
-    Reduced from 400px.
-    This removes the unnecessary empty vertical area.
+    The hero is deliberately shorter.
+    The search area will overlap the bottom
+    instead of leaving a huge empty area.
   */
-  min-height:335px;
+  min-height:345px;
 
-  /*
-    Reduced top/bottom spacing.
-  */
-  padding:30px 0 26px;
-
-  /*
-    KEEPING YOUR ORIGINAL IMAGE PATH EXACTLY
-  */
+  padding:30px 0 30px;
 
   background-image:
 
@@ -459,9 +453,6 @@ input{
   right:0;
   bottom:0;
 
-  /*
-    Reduced because the hero itself is now shorter.
-  */
   height:65px;
 
   pointer-events:none;
@@ -539,6 +530,15 @@ input{
    SEARCH
    ============================================================ */
 
+/*
+   IMPORTANT FIX
+
+   The search bar is pulled upward over the
+   empty bottom part of the hero.
+
+   This is the main change you were asking for.
+*/
+
 .search-row{
   display:flex;
 
@@ -547,9 +547,22 @@ input{
   max-width:760px;
 
   /*
-    Moved the search bar upward.
+    Pull the entire search row upward.
   */
-  margin-top:18px;
+  margin-top:-105px;
+
+  /*
+    Keep it visually above the hero fade.
+  */
+  position:relative;
+
+  z-index:5;
+
+  /*
+    Prevent the old vertical space from
+    being preserved underneath it.
+  */
+  margin-bottom:0;
 }
 
 .search-box{
@@ -570,7 +583,7 @@ input{
   border-radius:9px;
 
   background:
-    rgba(5,21,18,.90);
+    rgba(5,21,18,.94);
 
   box-shadow:
     inset 0 0 20px #22e5a607,
@@ -581,7 +594,7 @@ input{
 
 .search-box:focus-within{
   background:
-    rgba(6,26,22,.96);
+    rgba(6,26,22,.97);
 
   box-shadow:
     0 0 0 2px #22e5a611,
@@ -666,9 +679,13 @@ input{
   align-items:center;
 
   /*
-    Reduced spacing below the search.
+    The Try row follows the moved search bar.
   */
   margin:10px 0 18px;
+
+  position:relative;
+
+  z-index:5;
 
   font:14px var(--mono);
 }
@@ -710,10 +727,14 @@ input{
 
 .section-head{
   /*
-    Reduced the gap between hero/search area
-    and Search Results.
+    Search Results now comes immediately after
+    the Try row instead of retaining the hero gap.
   */
   margin:8px 0 11px;
+
+  position:relative;
+
+  z-index:4;
 }
 
 .section-head h2{
@@ -1261,11 +1282,15 @@ body.light .main-command{
     font-size:38px;
   }
 
+  /*
+    Slightly smaller upward pull on tablets.
+  */
   .search-row{
-    margin-top:17px;
+    margin-top:-90px;
   }
 
   .try-row{
+    margin-top:10px;
     margin-bottom:16px;
   }
 
@@ -1320,10 +1345,6 @@ body.light .main-command{
 
     padding:28px 0 30px;
 
-    /*
-      SAME ORIGINAL IMAGE
-    */
-
     background-image:
 
       linear-gradient(
@@ -1365,8 +1386,11 @@ body.light .main-command{
     max-width:580px;
   }
 
+  /*
+    Smaller overlap on tablet/mobile.
+  */
   .search-row{
-    margin-top:17px;
+    margin-top:-75px;
   }
 
   .try-row{
@@ -1426,15 +1450,16 @@ body.light .main-command{
     line-height:1.5;
   }
 
-  .search-row,
-  .try-row{
+  /*
+    Mobile search is stacked,
+    so use a smaller upward movement.
+  */
+  .search-row{
     flex-direction:column;
 
     align-items:stretch;
-  }
 
-  .search-row{
-    margin-top:15px;
+    margin-top:-65px;
   }
 
   .search-box{
@@ -1452,6 +1477,8 @@ body.light .main-command{
   }
 
   .try-row{
+    flex-direction:column;
+
     align-items:flex-start;
 
     margin-top:9px;
@@ -1511,6 +1538,10 @@ body.light .main-command{
 
   .section-head h2{
     font-size:22px;
+  }
+
+  .search-row{
+    margin-top:-55px;
   }
 }
 
